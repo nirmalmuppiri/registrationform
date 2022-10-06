@@ -1,5 +1,7 @@
 # Simple Flask Form
 
+**Note: I modified this existing project to make extend entries from a registration form, to be added to a database. The idea is to use the information stored in this database for additional UI modifications (this is yet to be done).**
+
 This project was built using 
 - HTML 
 - CSS 
