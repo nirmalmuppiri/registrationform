@@ -16,10 +16,22 @@
         {% if rows %}
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Job</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Village</th>
+                <th>District</th>
+                <th>State</th>
+                <th>Post Office</th>
+                <th>Pincode</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Grandmother's Name</th>
+                <th>Grandfather's Name</th>
+                <th>Father's Aadhaar</th>
+                <th>Grandfather's Aadhaar</th>
+
             </tr>
             {% for row in rows %}
                 <tr>
@@ -41,32 +53,126 @@
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='phone') }}">
-                            <label>{{ row.phone }}</label>
-                            <input type="text" name="phone" placeholder="Edit Phone Number">
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='midname') }}">
+                            <label>{{ row.midname }}</label>
+                            <input type="text" name="Middle Name" placeholder="Edit Middle Name">
                             <br>
                             <input type="submit" value="SUBMIT">
                         </form>
                     </td>
                     
                     <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='email') }}">
-                            <label>{{ row.email }}</label>
-                            <input type="text" name="email" placeholder="Edit Email">
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='lastname') }}">
+                            <label>{{ row.lastname }}</label>
+                            <input type="text" name="Last Name" placeholder="Edit Last Name">
                             <br>
                             <input type="submit" value="SUBMIT">
                         </form>
                     </td>
 
                     <td>
-                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='job') }}">
-                            <label>{{ row.job }}</label>
-                            <input type="text" name="job" placeholder="Edit Job">
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='dob') }}">
+                            <label>{{ row.dob }}</label>
+                            <input type="text" name="Last Name" placeholder="Edit Last Name">
                             <br>
                             <input type="submit" value="SUBMIT">
                         </form>
                     </td>
-                    
+
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='village') }}">
+                            <label>{{ row.job }}</label>
+                            <input type="text" name="Village" placeholder="Edit Village">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='district') }}">
+                            <label>{{ row.district }}</label>
+                            <input type="text" name="District" placeholder="Edit District">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='state') }}">
+                            <label>{{ row.state }}</label>
+                            <input type="text" name="State" placeholder="Edit State">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='postoffice') }}">
+                            <label>{{ row.postoffice }}</label>
+                            <input type="text" name="Post Office" placeholder="Edit Post Office">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+                                        <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='pincode') }}">
+                            <label>{{ row.pincode }}</label>
+                            <input type="text" name="Pincode" placeholder="Edit Pincode">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='fathname') }}">
+                            <label>{{ row.fathname }}</label>
+                            <input type="text" name="Father's Name" placeholder="Edit Father's Name">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='mothname') }}">
+                            <label>{{ row.midname }}</label>
+                            <input type="text" name="Mother's Name" placeholder="Edit Mother's Name">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='grandmothname') }}">
+                            <label>{{ row.grandmothname }}</label>
+                            <input type="text" name="Grandmother's Name" placeholder="Edit Grandmother's Name">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='grandfathname') }}">
+                            <label>{{ row.grandfathname }}</label>
+                            <input type="text" name="Grandfather's Name" placeholder="Edit Grandfather's Name">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='fath_aadhaar') }}">
+                            <label>{{ row.fath_aadhaar }}</label>
+                            <input type="text" name="Father's Aadhaar ID" placeholder="Edit Father's Aadhaar ID">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="{{ url_for('modify_database', the_id=row.id, modified_category='grandfath_aadhaar') }}">
+                            <label>{{ row.grandfath_aadhaar }}</label>
+                            <input type="text" name="Grandfather's Aadhaar ID" placeholder="Edit Grandfather's Aadhaar ID">
+                            <br>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </td>
+
                 </tr>
             {% endfor %}
         {% endif %}

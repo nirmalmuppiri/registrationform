@@ -26,21 +26,56 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///info.db' # for using the sqli
 
 db = SQLAlchemy(app)
 
-# Create User Table
+#Alter tables
+
+##Step 3: Make changes to the existing info.db database such that the inserts go well!
+## Next step is to make sure routes for inserts are established properly. This can be done in routes.submitted().
+
+# def do_stuff_in_SQL(query):
+#     import sqlite3
+#     dbCon = sqlite3.connect('info.db')
+#     cur = dbCon.cursor()
+#     cur.execute(query)
+#
+#     if query == "SELECT * FROM Users":
+#         print([x[0] for x in cur.description])
+#         print(cur.fetchall())
+
+#Example
+#do_stuff_in_SQL("ALTER TABLE Users ADD dob DATE")
+
+
+
+
+
+    # Create User Table
 class User(db.Model):
     __tablename__ = 'Users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
-    phone = db.Column(db.Integer)
-    email = db.Column(db.String(50))
-    job = db.Column(db.String(50))
+    midname = db.Column(db.String(50))
+    lastname = db.Column(db.String(50))
+    dob = db.Column(db.String(50))
+    village = db.Column(db.String(50))
+    district = db.Column(db.String(50))
+    state = db.Column(db.String(50))
+    postoffice = db.Column(db.String(50))
+    pincode = db.Column(db.Integer)
 
-def insert_data(name, phone, email, job):
-    new_user = User(name=name, phone=phone, email=email, job=job)
+    fathname = db.Column(db.String(50))
+    mothname = db.Column(db.String(50))
+    grandmothname = db.Column(db.String(50))
+    grandfathname = db.Column(db.String(50))
+    fath_aadhaar = db.Column(db.Integer)
+    grandfath_aadhaar = db.Column(db.Integer)
+
+def insert_data (name, midname, lastname,dob, village, district,state,postoffice,pincode,fathname,mothname,grandmothname,grandfathname, fath_aadhaar, grandfath_aadhaar):
+    new_user = User(name = name, midname = midname, lastname = lastname,dob=dob, village =village, district = district,state =state,postoffice=postoffice,pincode=pincode,fathname =fathname,mothname =mothname,grandmothname = grandmothname,grandfathname = grandfathname, fath_aadhaar = fath_aadhaar, grandfath_aadhaar = grandfath_aadhaar)
     db.session.add(new_user)
     db.session.commit()
 
 def modify_data(the_id, col_name, user_input):
+    #This won't work but can be easily modified. Check if col_name matches those under User(), and follow the structure below.
     the_user = User.query.filter_by(id=the_id).first()
     if col_name == 'name':
         the_user.name = user_input

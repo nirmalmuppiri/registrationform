@@ -11,19 +11,63 @@
 	<div class="container">
 
     <header>
-      <h1>Conference</h1>
+      <h1>Family Heirarchy Registration</h1>
     </header>
+
+<!-- Step 2: All the attributes of the LoginForm need to be 'submitted' into the Database.
+Use the variables assigned under the LoginForm() class. The order here determines the order of the textboxes in the UI. -->
 
     <form method="POST" action="{{ url_for('submitted') }}">
       {{ form.csrf_token }}
+
       {{ form.name.label }}
       {{ form.name }}
-      {{ form.phone.label }}
-      {{ form.phone }}
-      {{ form.email.label }}
-      {{ form.email }}
-      {{ form.job.label }}
-      {{ form.job }}
+
+      {{ form.middle_name.label }}
+      {{ form.middle_name }}
+
+      {{ form.last_name.label }}
+      {{ form.last_name }}
+
+      {{ form.date_of_birth.label }}
+      {{ form.date_of_birth }}
+
+      {{ form.middle_name.label }}
+      {{ form.middle_name }}
+
+      {{ form.village.label }}
+      {{ form.village }}
+
+      {{ form.district.label }}
+      {{ form.district }}
+
+      {{ form.state.label }}
+      {{ form.state }}
+
+      {{ form.postoffice.label }}
+      {{ form.postoffice }}
+
+      {{ form.pincode.label }}
+      {{ form.pincode }}
+
+      {{ form.father_name.label }}
+      {{ form.father_name }}
+
+      {{ form.father_aadhaar.label }}
+      {{ form.father_aadhaar }}
+
+      {{ form.mother_name.label }}
+      {{ form.mother_name }}
+
+      {{ form.grandfather_name.label }}
+      {{ form.grandfather_name }}
+
+      {{ form.grandfather_aadhaar.label }}
+      {{ form.grandfather_aadhaar }}
+
+      {{ form.grandmother_name.label }}
+      {{ form.grandmother_name }}
+
       <button type="submit">Register</button>
     </form>
     <button><a href="{{ url_for('view_database') }}">View Database</a></button>
